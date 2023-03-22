@@ -13,28 +13,19 @@ function Heading() {
   );
 }
 
-class Team extends React.Component <{school: string; name: string; city: string; state: string}> {
+class TeamCard extends React.Component <{school: string; name: string; city: string; state: string}> {
   render() {
 
     const oneTeam = this.props;
 
     return(
-      <div>
-        <div className="row justify-content-center">
-          <div className="col-4">
-            <div className="card m-1">
-
-              <div className="cardheader">
-                <h3>{oneTeam.school}</h3>
-              </div>
-
-              <div className="cardbody">
-                <p>Mascot: {oneTeam.name}</p>
-                <p>Location: {oneTeam.city}, {oneTeam.state}</p>
-              </div>
-
-            </div>
-          </div>
+      <div className="card m-1">
+        <div className="cardheader">
+          <h3>{oneTeam.school}</h3>
+        </div>
+        <div className="cardbody">
+          <p>Mascot: {oneTeam.name}</p>
+          <p>Location: {oneTeam.city}, {oneTeam.state}</p>
         </div>
       </div>
     );
@@ -45,7 +36,13 @@ function TeamList() {
   
   return (
     <div>
-      {teamJson.teams.map(oneTeam => <Team {...oneTeam}/>)}
+      <div>
+        <div className="row justify-content-center">
+          <div className="col-4">
+            {teamJson.teams.map(oneTeam => <TeamCard {...oneTeam}/>)}
+          </div>         
+        </div>
+      </div>
     </div>
   );
 }
