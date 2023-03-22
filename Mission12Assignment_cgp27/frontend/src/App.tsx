@@ -39,8 +39,11 @@ function TeamList() {
       <div>
         <div className="row justify-content-center">
           <div className="col-4">
-            {teamJson.teams.map(oneTeam => <TeamCard {...oneTeam}/>)}
-          </div>         
+            {teamJson.teams.slice(0, teamJson.teams.length / 2).map(oneTeam => <TeamCard {...oneTeam}/>)}
+          </div>    
+          <div className="col-4">
+            {teamJson.teams.slice(teamJson.teams.length / 2).map(oneTeam => <TeamCard {...oneTeam}/>)}
+          </div>       
         </div>
       </div>
     </div>
