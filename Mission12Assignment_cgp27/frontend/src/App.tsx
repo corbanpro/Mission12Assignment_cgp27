@@ -7,7 +7,7 @@ const teamJson = data
 
 function Heading() {
   return (
-    <div>
+    <div className='text-light'>
       <h1>Welcome to the Official March Madness Team List!</h1>
     </div>
   );
@@ -20,7 +20,7 @@ class Team extends React.Component <{school: string; name: string; city: string;
 
     return(
       <div>
-        <div className="row">
+        <div className="row justify-content-center">
           <div className="col-4">
             <div className="card m-1">
 
@@ -52,7 +52,7 @@ function TeamList() {
 
 function App() {
   return (
-    <div>
+    <div className='App bg-dark'>
       <Heading/>
       <TeamList/>
     </div>
